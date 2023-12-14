@@ -25,9 +25,9 @@
 # * 1 tab == 4 spaces!
 # */
 
-CC=arm-elf-gcc
-OBJCOPY=arm-elf-objcopy
-ARCH=arm-elf-ar
+CC=arm-none-eabi-gcc
+OBJCOPY=arm-none-eabi-objcopy
+ARCH=arm-none-eabi-ar
 CRT0=boot.s
 WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare \
 		-Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wunused
@@ -35,7 +35,7 @@ WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align
 #
 # CFLAGS common to both the THUMB and ARM mode builds
 #
-CFLAGS=$(WARNINGS) -D $(RUN_MODE) -D GCC_ARM7 -I. -I../../Source/include \
+CFLAGS=$(WARNINGS) -D $(RUN_MODE) -D GCC_ARM7 -I. -I../../source/include \
 		-I../Common/include $(DEBUG) -mcpu=arm7tdmi -T$(LDSCRIPT) \
 		 $(OPTIM) -fomit-frame-pointer -fno-strict-aliasing -fno-dwarf2-cfi-asm
 
@@ -47,7 +47,7 @@ endif
 
 LINKER_FLAGS=-Xlinker -ortosdemo.elf -Xlinker -M -Xlinker -Map=rtosdemo.map
 
-RTOS_SOURCE_DIR=../../Source
+RTOS_SOURCE_DIR=../../source
 DEMO_SOURCE_DIR=../Common/Minimal
 #
 # Source files that can be built to THUMB mode.
