@@ -35,7 +35,7 @@ WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align
 #
 # CFLAGS common to both the THUMB and ARM mode builds
 #
-CFLAGS=$(WARNINGS) -D $(RUN_MODE) -D GCC_ARM7 -I. -I../../source/include \
+CFLAGS=$(WARNINGS) -D$(RUN_MODE) -DGCC_ARM7 -I. -I../../source/include \
 		-I../Common/include $(DEBUG) -mcpu=arm7tdmi -T$(LDSCRIPT) \
 		 $(OPTIM) -fomit-frame-pointer -fno-strict-aliasing -fno-dwarf2-cfi-asm
 
