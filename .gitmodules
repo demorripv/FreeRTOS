@@ -85,3 +85,6 @@
 [submodule "FreeRTOS-Plus/Source/FreeRTOS-Plus-Trace"]
 	path = FreeRTOS-Plus/Source/FreeRTOS-Plus-Trace
 	url = https://github.com/percepio/TraceRecorderSource.git
+[submodule "FreeRTOS/source"]
+	path = FreeRTOS/source
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel
